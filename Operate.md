@@ -54,7 +54,7 @@ Toggle the control switches according to this Opcode Table:
 ---
 
 ### Example Workflow: $6 + 3 = 9$
-1. **RESET:** Set Input B and Opcodes to `0`. Pulse Master CLK to clear Register A.
+1. **RESET:** Set Input B to '0' and Opcodes to `01X`. Pulse Master CLK to clear Register A.
 2. **LOAD A (6):** Set Input B to `0110` (6). Pulse Master CLK. (Register A now holds 6).
 3. **SET B (3):** Change Input B to `0011` (3).
 4. **EXECUTE:** Set `MODE_1`=0, `MODE_0`=0, `SUB`=0. 
