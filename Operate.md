@@ -28,7 +28,7 @@ Unlike the multiplier, the ALU uses a latched register for its first operand. To
 Before executing *any* new operation, you must clear the data bus, control lines, and **flush Register A**. Failing to do so will result in floating gates or residual data corrupting your next calculation.
 
 1. **Clear Input Bus:** Set all switches on **Input B** ($B_3, B_2, B_1, B_0$) to `LOW` (0).
-2. **Clear Opcodes:** Set `MODE_1`, `MODE_0`, and `SUB` switches to `0` (Bitwise AND state).
+2. **Clear Opcodes:** Set `MODE_1`, `MODE_0`, and `SUB` switches to `01x` (Bitwise AND state) to clear out garbage values.
 3. **Flush Register A:** With Input B at `0000`, trigger a single pulse on the **Master CLK** (toggle LOW $\rightarrow$ HIGH $\rightarrow$ LOW). This writes `0000` into Register A.
 4. **Wait for Discharge:** Allow a few simulation frames for all transistor gates to fully discharge and the output bus to settle at `0`.
 
